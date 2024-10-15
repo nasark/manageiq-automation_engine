@@ -24,6 +24,8 @@ module MiqAeEngine
       :msg_timeout => 60.minutes
     }.merge(options)
 
+    options[:task_id] = nil if options.key?(:task_id)
+
     MiqQueue.put(options)
   end
 
